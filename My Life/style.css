@@ -1,0 +1,685 @@
+:root {
+  --boxShadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --normalShadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  --backgroundGradient: linear-gradient(90deg, rgba(98, 98, 102, 1) 0%, rgba(0, 0, 0, 1) 53%, rgba(22, 22, 22, 1) 100%);
+  --skillsColor: rgba(228, 59, 59, 0.904);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+html,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, var(--skillsColor));
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #00c6ff);
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgb(179, 242, 178), rgb(235, 205, 238));
+
+
+}
+
+.spacing {
+  margin-bottom: 50px;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 0;
+  background: var(--skillsColor);
+
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 70px;
+}
+
+.logo img,
+.introduce-img img,
+.img-box img,
+.schools>div img,
+.friend-img img,
+.gallery-memories img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-container ul {
+  list-style: none;
+  margin-right: 50px;
+}
+
+.navbar-container ul li {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0 5px;
+  position: relative;
+}
+
+.navbar-container ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-container ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  transform: scale(0, 1);
+  background: darkred;
+  transition: all .15s;
+}
+
+.navbar-container ul li:hover::after {
+  width: 100%;
+  transform: scale(1, 1);
+}
+
+.introduce-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 40px;
+}
+
+.introduce-me {
+  flex-basis: 50%;
+
+  color: #000;
+  padding: 20px;
+}
+
+.introduce-me p,
+.letter-color {
+  font-size: 42px;
+}
+
+.letter-color {
+  color: var(--skillsColor);
+}
+
+.introduce-img {
+  flex-basis: 50%;
+  height: 400px;
+}
+
+.introduce-img img {
+  border-radius: 100%;
+}
+
+.about-me {
+  padding: 0 40px;
+}
+
+.about-me-main-box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  column-gap: 20px;
+}
+
+.img-box,
+.about-me-box {
+  flex-basis: 50%;
+}
+
+.img-box {
+  height: 100%;
+}
+
+.img-box img {
+  border-radius: 8px;
+}
+
+.about-me-box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.me-box>h1,
+.skills>h1,
+.memories>h1,
+.friend-txt>h2,
+.contact-txt>h1,
+.music-container>h2 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.me-box,
+.skills {
+  padding: 10px;
+}
+
+.skills {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.skill-content {
+  width: 100%;
+}
+
+.skill-content img {
+  width: 25px;
+  height: 25px;
+}
+
+.skill-box {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.rate-skills {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 3px;
+  margin: 15px 0;
+}
+
+.rate-skills>div {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: var(--skillsColor);
+}
+
+.schools {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.campus {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+}
+
+.campus img {
+  z-index: 0;
+}
+
+.campus:hover {
+  background: var(--skillsColor);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.marick::after {
+  content: "Marick";
+  position: absolute;
+  color: #fff;
+  font-size: 22px;
+  transition: all .15s;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.felix::after {
+  content: "Felix";
+  position: absolute;
+  color: #fff;
+  font-size: 22px;
+  transition: all .15s;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gardner::after {
+  content: "Gardner";
+  position: absolute;
+  color: #fff;
+  font-size: 22px;
+  transition: all .15s;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icct::after {
+  content: "ICCT";
+  position: absolute;
+  color: #fff;
+  font-size: 22px;
+  transition: all .15s;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marick:hover::after,
+.felix:hover::after,
+.gardner:hover::after,
+.icct:hover::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.friends {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 40px;
+  column-gap: 50px;
+}
+
+.friend-box1 {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.friend-img {
+  height: 250px;
+}
+
+.friend-img img {
+  border-radius: 8px;
+}
+
+.friend-box2 {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.friend-txt {
+  height: 50%;
+  overflow: hidden;
+}
+
+.memories {
+  padding: 20px 40px;
+
+}
+
+.gallery-memories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.gallery-memories>div {
+  width: 250px;
+  height: 200px;
+}
+
+.gallery-memories>div img {
+  border-radius: 8px;
+}
+
+.gallery-memories>div:hover {
+  transform: scale(.98);
+  box-shadow: var(--boxShadow);
+}
+
+.contact-us {
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-txt {
+  width: 50%;
+  box-shadow: var(--boxShadow);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+form input[type="text"] {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--skillsColor);
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+form label {
+  display: inline-block;
+}
+
+textarea {
+  margin-top: 40px;
+  border: 2px solid var(--skillsColor);
+  display: block;
+  width: 100%;
+}
+
+.submit {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .15s;
+  margin-bottom: 30px;
+  width: 140px;
+}
+
+.submit:hover {
+  box-shadow: var(--normalShadow);
+  background: var(--skillsColor);
+  color: #fff;
+}
+
+footer {
+  background: var(--skillsColor);
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  padding: 15px 0;
+}
+
+footer p {
+  font-size: 22px;
+  text-align: center;
+}
+
+.skill-box>h2 {
+  font-weight: 300;
+}
+
+.media-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.media-links img {
+  width: 50px;
+  height: 50px;
+  transition: .15s;
+}
+
+.media-links a:hover {
+  transform: scale(.9);
+}
+
+.music-container {
+  width: 100%;
+  height: 400px;
+  padding: 0 40px;
+}
+
+.music-container video {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--boxShadow);
+  animation: videoAnimation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+#menuIcon,
+#closeIcon {
+  display: none;
+}
+
+@keyframes videoAnimation {
+  0% {
+    border: 3px solid crimson;
+  }
+
+  25% {
+    border: 3px solid aqua;
+  }
+
+  50% {
+    border: 3px solid darkgreen;
+  }
+
+  75% {
+    border: 3px solid teal;
+  }
+
+  100% {
+    border: 3px solid gold;
+  }
+}
+
+@media screen and (max-width: 725px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  #menuIcon,
+  #closeIcon {
+    display: block;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .menuIcon {
+    color: var(--skillsColor);
+  }
+
+  .closeIcon {
+    color: #add8e6;
+  }
+
+  header {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .navbar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: -100%;
+    transition: right .15s ease-in-out;
+  }
+
+  .navbar-container ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 26%;
+  }
+
+  .navbar-container ul li {
+    margin: 5px 0;
+    padding: 5px 0;
+  }
+
+  .navbar-container ul li:hover::after {
+    transform: scale(1, 1);
+  }
+
+  .navbar-container ul li a:hover {
+    color: lightblue;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .main-container {
+    height: 100%;
+    line-height: 24px;
+
+  }
+
+  .introduce-me p,
+  .introduce-me .letter-color {
+    font-size: 16px;
+    word-spacing: .1rem;
+  }
+
+  .introduce-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-me-main-box,
+  .about-me-box {
+    flex-direction: column;
+  }
+
+  .skills>h1 {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .schools {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    row-gap: 30px;
+  }
+
+  .campus {
+    width: 100%;
+  }
+
+  .friends {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .friend-box1 {
+    row-gap: 20px;
+  }
+
+  .friend-box2 {
+    margin-top: 40px;
+  }
+
+  .friend-img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sumbingtik::after {
+    content: "SUMBINGTIK";
+    position: absolute;
+    color: #000;
+    font-size: 22px;
+    transition: all .15s;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .food-trip::after {
+    content: "FOOD TRIP";
+    position: absolute;
+    color: #fff;
+    font-size: 22px;
+    transition: all .15s;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sumbingtik:hover::after,
+  .food-trip:hover::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .gallery-memories {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .gallery-memories>div {
+    width: 100%;
+  }
+
+  .contact-us {
+    justify-content: flex-start;
+  }
+
+  .contact-txt {
+    flex-basis: 100%;
+  }
+
+  footer {
+    height: 40px;
+    padding: 10px 0;
+  }
+
+  footer p {
+    font-size: 16px;
+  }
+}
