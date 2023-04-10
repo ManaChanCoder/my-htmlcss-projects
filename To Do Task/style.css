@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(130deg, rgb(28, 28, 99), rgb(90, 127, 140));
+}
+
+.task-container {
+  background: rgb(157, 221, 243);
+  width: 100%;
+  max-width: 550px;
+  padding: 20px 40px;
+  margin: 40px auto 20px;
+  border-radius: 12px;
+}
+
+.title-container {
+  margin: 40px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: #578704;
+}
+
+.title-container h1 {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.title-container span {}
+
+.search-container {
+  margin-top: 40px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  height: 40px;
+  padding: 10px 10px 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+}
+
+.search-container button {
+  color: #578704;
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.task-container ul {
+  padding: 20px 40px 0;
+}
+
+.task-container ul li {
+  padding: 5px 10px 5px;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.task-container ul li::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-image: url(img/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: -15px;
+  top: 4px;
+  color: #578704;
+}
+
+.task-container ul li.checked::before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: -15px;
+  top: 4px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(img/check_circle_FILL0_wght400_GRAD0_opsz48.svg);
+  color: #578704;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.task-container ul li span {
+  position: absolute;
+  right: 0;
+  font-size: 22px;
+  color: #ff0000;
+  cursor: pointer;
+}
